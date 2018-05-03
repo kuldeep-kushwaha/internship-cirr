@@ -1,0 +1,270 @@
+
+<html>
+
+<head>
+
+  <style>
+    
+    .dot{
+      font-size:50px;
+      color:black;
+      position:absolute;
+    }
+    
+    .erase{
+      font-size:60px;
+      color:white;
+      position:absolute;
+    }
+    
+    #page{
+      width:500px;
+      height:400px;
+      background-color: lightblue;
+      
+    }
+    
+    .d_dot{
+      background-color:black;
+      width:6px;
+      height:6px;
+      position:absolute;
+      display:inline-block;
+      border-radius:2px;
+
+    }
+  </style>
+</head>
+
+  <body>
+       
+    left click and move mouse to draw and right click to erase 
+ 
+  <br><br>🎨 Color:<input  id="colorChoice" type=color>
+  
+    &nbsp; &nbsp; &nbsp;   🖌 Tool&nbsp;
+    
+    <select>
+      <option>draw</option>
+      <option>rectangle</option>
+      <option>circle</option>
+      <option>fill</option>
+   </select>
+    <br><br>
+    
+    <div id="page">
+      
+    </div>
+  </body>
+  <script>
+    
+    let select = document.querySelector("select");
+    var opt_sec="draw";
+    select.addEventListener("change", () => {
+    let number = 0;
+    for (let option of Array.from(select.options)) {
+      if (option.selected) {
+        opt_sec=option.value;
+        
+        console.log(opt_sec);
+      }
+    }
+ //   output.textContent = number;
+  });
+    
+    
+//=============================================================    
+      window.oncontextmenu = function () {
+   return false;
+}
+      
+ 
+      var color_code="#000000";
+      
+    var col=document.getElementById("colorChoice");
+     var paper=document.getElementById("page");
+    
+    col.addEventListener("change",function(event){
+
+      color_code=col.value;
+   //   console.log(color_code);
+      
+    });
+    
+    
+paper.addEventListener("mousedown", event => {
+    if (event.button == 1) {
+  
+      var rm = paper.querySelectorAll(".d_dot");
+      
+      for(var i=0;i<rm.length;i++)
+        {
+          rm[i].remove();
+        }
+    }
+    
+  });
+    
+    
+      
+    var r_start=0; //================================
+    var r_startY=0;
+    var new_rec=null;
+    
+  paper.addEventListener("mousedown", event => {
+    if (event.button == 0)
+    {     
+      if(opt_sec=="draw")
+        {
+             paper.addEventListener("mousemove",draw);
+            event.preventDefault(); 
+        }
+      else if(opt_sec=="fill")
+        {
+          paper.addEventListener("click",fill);
+          event.preventDefault(); 
+        }
+       else if(opt_sec=="rectangle" || opt_sec=="circle")
+        {
+          r_startX=event.pageX;
+         r_startY=event.pageY;
+          
+          console.log(r_startX,r_startY);
+          
+          if(new_rec==null)
+            {
+               new_rec=document.createElement("div");
+               new_rec.className="d_dot";
+              console.log("inside if");
+            }
+         
+          
+          paper.addEventListener("mousemove",rectangle);
+          event.preventDefault(); 
+        }
+      
+
+    }
+    else if(event.button == 2)
+      {
+        event.preventDefault(); 
+        paper.addEventListener("mousemove",erase);
+        event.preventDefault(); 
+      }
+  });
+    
+//=======================================================
+    
+ 
+     function rectangle(event) 
+    {
+
+       console.log(r_startX,r_startY);
+    new_rec.style.left=r_startX + "px";
+    new_rec.style.top=r_startY + "px";
+
+var w=(event.pageX>=r_startX)?(event.pageX-r_startX):0; 
+ var h=(event.pageY>=r_startY)?(event.pageY-r_startY):0;
+      
+      if(opt_sec=="rectangle")
+        {   
+    new_rec.style.width=w+ "px";
+    new_rec.style.height=h+"px";
+    new_rec.style["background-color"]=color_code;
+    paper.appendChild(new_rec);  
+        }
+      
+      else if(opt_sec=="circle")
+       {
+        new_rec.style.width=w+ "px";
+      new_rec.style.height=w+"px";
+      new_rec.style["background-color"]=color_code;
+     new_rec.style["border-radius"]=w*h+"px";
+      paper.appendChild(new_rec);
+      
+          }
+    }
+    
+
+    
+//=============================================================    
+    
+ paper.addEventListener("mouseup", event => {
+   
+    if (event.button == 0) {
+      paper.removeEventListener("mousemove", draw);
+       paper.removeEventListener("mousemove",rectangle);
+      new_rec=null;
+      event.preventDefault(); 
+    }
+    else if(event.button == 2)
+      {
+      event.preventDefault(); 
+      paper.removeEventListener("mousemove", erase);
+      event.preventDefault(); 
+      }
+  });
+    
+    
+    function draw(event) 
+    {
+      var d=document.createElement("div");
+        d.className="d_dot";
+     //   d.appendChild(document.createTextNode("."));
+        paper.appendChild(d);
+      
+        d.style.left = (event.pageX) + "px";
+        d.style.top = (event.pageY) + "px";
+        d.style["background-color"]=color_code;
+//    d.style["background-color"] ="#"+((1<<24)*Math.random()|0).toString(16);
+    }
+
+    
+    function fill(event) 
+    {
+      var pg = document.getElementById("page");
+        pg.style["background-color"]=color_code;
+//    d.style["background-color"] ="#"+((1<<24)*Math.random()|0).toString(16);
+     paper.removeEventListener("click",fill);
+    }
+    
+    
+    
+    
+    
+//----------------- erase -------------
+    function erase(event) 
+    {
+       var c_x=event.pageX;
+       var c_y=event.pageY;
+      var rm = paper.querySelectorAll(".d_dot");
+      
+      for(var i=0;i<rm.length;i++)
+        {
+    
+          //rm[i].remove();
+          
+       
+          
+        ///   var style = rm[i].offsetHeight;
+        //
+       //    console.log(style);
+          
+          var d_top=parseFloat(rm[i].style.top);
+          var d_left=parseFloat(rm[i].style.left);
+          var d_right=(parseFloat(rm[i].style.left)+rm[i].offsetWidth);
+          var d_bottom=(parseFloat(rm[i].style.top)+rm[i].offsetHeight);
+          
+           if( (d_left <= c_x) && (c_x<=d_right)&&
+               (d_top <= c_y) && (c_y<=d_bottom))
+             {
+               rm[i].remove();
+             }
+        }
+      
+    }
+
+     
+  </script>
+</html>
+

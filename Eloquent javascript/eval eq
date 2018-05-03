@@ -1,0 +1,87 @@
+var og="(2*((5+3)*3))";
+
+var eq=og;
+
+var arr=[];
+var new_eq=[];
+var o_b_count=0;
+var c_b_count=0;
+//console.log(eq[eq.length-3]);
+
+for(var i=0;i<eq.length;i++)
+  {
+    if(eq[i]== "(")
+      {
+       o_b_count++;
+      }
+    else if(eq[i]== ")")
+      {
+       c_b_count++;
+      }
+  }
+
+//arr.unshift("z")
+//arr.unshift("x")
+
+console.log(o_b_count);
+console.log(c_b_count);
+
+var o_b_temp=0;
+var c_b_temp=0;
+var start=0;
+var end=0;
+
+for(var i=0;i<eq.length;i++)
+  {
+    
+    if(eq[i]== "(")
+      {
+        o_b_temp++;
+      }
+    
+    if(o_b_temp ==o_b_count)
+      {
+        console.log("i "+i);
+        start=i;
+        break;
+      }
+  }
+
+for(var i=eq.length-1;i>=0;i--)
+  {
+   // console.log(eq[i]);
+    if(eq[i]== ")")
+      {
+        c_b_temp++;
+      }
+    
+    if(c_b_temp == c_b_count)
+      {
+        console.log("i "+i);
+        end=i;
+        break;
+      }
+  }
+
+for(var i=start+1;i<end;i++)
+  {
+    console.log(eq[i]);
+    arr.push(eq[i]);
+  }
+
+for(var i=0;i<eq.length;i++)
+  {
+   // console.log(end);
+    if(i>=start && i<=end)
+      {
+        console.log( "-- "+eq[i]);
+        continue;
+      }
+    else
+      {
+        new_eq.push(eq[i]);
+      }
+  }
+ console.log(arr);
+ console.log(new_eq);
+

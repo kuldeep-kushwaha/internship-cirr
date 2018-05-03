@@ -1,0 +1,47 @@
+ class Vec{
+   
+   constructor(x,y)
+   {
+    this.x=x;
+    this.y=y; 
+   //  console.log(this.x +"-----"+this.y);
+     return this.x;
+   }
+   
+   // Vec{x: 3, y: 5}
+   plus(Vec)
+   {
+   
+     return "Vec{x:"+(Vec.x+this.x)+", y: "+(Vec.y+this.y)+"}";
+     
+ 
+   }
+   
+    minus(Vec)
+   {
+   
+     return "Vec{x:"+(this.x-Vec.x)+", y: "+(this.y-Vec.y)+"}";
+   }
+   
+   get length()
+   {
+     
+     return  Math.sqrt(Math.pow(this.x,2)+ Math.pow(this.y,2));
+  //  return ab
+   }
+   
+ }
+
+//var x=new vec(1,2);
+
+
+console.log(new Vec(4,6).plus(new Vec(5,8)));
+
+console.log(new Vec(1,2).minus(new Vec(2, 3)));
+
+
+console.log(new Vec(3, 4).length);
+
+
+
+

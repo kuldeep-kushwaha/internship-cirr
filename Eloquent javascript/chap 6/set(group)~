@@ -1,0 +1,63 @@
+
+class Group{
+  
+  constructor()
+  {
+    this.arr=[];
+  }
+    
+  add(value)
+  {
+    this.arr.push(value);
+   // console.log(this.arr);
+  }
+  
+  delete(value)
+  {
+    var index = this.arr.indexOf(value);
+   // console.log(index)
+
+    if(index>-1)
+    {
+       this.arr.splice(index,1)
+    }
+  }
+  
+  has(value)
+  {
+    return this.arr.includes(value);
+  }
+  
+  show()
+  {
+    return this.arr;
+  }
+  
+  static from(arr)
+  {
+    let g = new Group;
+    for (let val of arr){
+      g.add(val);
+     // console.log(val);
+    }
+    return g;
+  }
+}
+
+
+
+let g = Group.from([10, 20]);
+console.log(g.has(10));
+
+g.add(30)
+console.log(g.show());
+
+let ab= new Group();
+ab.add(500);
+ab.add(600);
+ab.add(700);
+console.log(ab.show());
+
+
+
+

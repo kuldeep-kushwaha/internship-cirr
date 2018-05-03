@@ -1,0 +1,14 @@
+
+function loop(val,tst,up,op)
+{
+  if(tst(val))
+    {
+      op(val);
+      up(val)
+      loop(up(val),tst,up,console.log);
+    }
+  
+}
+
+loop(3,n=>n<20,n=>n+5,console.log);
+

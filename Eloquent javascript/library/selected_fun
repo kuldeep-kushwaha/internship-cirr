@@ -1,0 +1,47 @@
+
+// ------------ array ----------------
+_.chunk
+_.compact(array)
+_.concat
+_.drop(array, [n=1])
+_.dropRight
+
+unzip
+_.union([arrays])
+
+
+// ------------ collection  ----------------
+
+_.size(collection)
+
+_.shuffle(collection)
+
+//-------------- number --------
+_.inRange(number, [start=0], end)
+
+
+//------- function--------------
+
+_.flip(func)
+
+//------------------ Lang--------------
+
+_.toArray(value) // done 
+
+_.clone(value)
+
+_.gt
+
+
+//------------------math-----------
+_.mean(array)
+_.sum(array)
+
+//------------String-------------------------------
+_.capitalize([string=''])
+
+_.repeat('*', 3);
+
+_.trim()
+//------------------------ util --------------------
+_.rangeRight([start=0], end, [step=1])

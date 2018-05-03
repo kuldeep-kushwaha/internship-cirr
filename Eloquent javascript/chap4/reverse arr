@@ -1,0 +1,30 @@
+var ha=[1,2,3,4,5,6,7,8,9]
+
+function reverseInPlace(arr)
+{
+for(var i=0;i<(arr.length)/2;i++)
+  {
+    var temp=arr[i];
+    arr[i]=arr[(arr.length-1)-i];
+   arr[(arr.length-1)-i]=temp;   
+    
+  }
+  
+  return arr;
+}
+
+
+function reversearr(arr12)
+{
+  var temp=[];
+  var ln=arr12.length
+ for(var i=0;i<(ln);i++)
+  {
+    temp.push(arr12.pop());
+    
+    //console.log(arr12.pop()+"-----"+i);
+  }
+  return temp;
+}
+  
+document.write("<br>"+reversearr(ha));

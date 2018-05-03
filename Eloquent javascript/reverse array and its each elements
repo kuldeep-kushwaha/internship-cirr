@@ -1,0 +1,28 @@
+var arr=["abc","wxyz"]
+
+document.write(arr);
+
+for(var i=0;i<(arr.length);i++)
+  {
+    var temp="";
+    for(var j=arr[i].length-1;j>=0;j--)
+    {
+      //document.write("<br>"+arr[i][j]);
+      temp=temp+arr[i][j];
+    }
+  //  document.write("<br>"+temp);
+    
+    arr[i]=temp;
+  }   
+
+
+for(var i=0;i<(arr.length)/2;i++)
+  {
+    var temp=arr[i];
+    arr[i]=arr[(arr.length-1)-i];
+   arr[(arr.length-1)-i]=temp;   
+    
+  }
+
+//document.write("<br>"+arr[0].length);
+document.write("<br>"+arr);

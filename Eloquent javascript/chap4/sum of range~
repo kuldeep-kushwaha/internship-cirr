@@ -1,0 +1,46 @@
+range=(st,ed,inc=1)=>{
+  
+  var temp=[];
+  
+  if(st<=ed)
+    {
+      for(var i=st;i<=ed;i+=inc)
+        {
+          console.log(i);
+          temp.push(i);
+        }
+    }
+  else if(st>ed)
+    {
+        for(var i=st;i>=ed;i-=inc)
+        {
+          console.log(i);
+          temp.push(i);
+        }
+    }
+  return temp;
+}
+
+
+sum=(arr)=>
+{
+  var sum=0;
+  
+  for(var i=0;i<=arr.length-1;i++)
+    {
+      sum=sum+arr[i];
+    }
+  return sum;
+}
+
+document.write(sum(range(2,7,1)));
+
+
+
+
+
+
+
+
+
+

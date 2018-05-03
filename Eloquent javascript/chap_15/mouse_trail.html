@@ -1,0 +1,64 @@
+<html>
+
+<head>
+
+  <style>
+    
+    .dot{
+      font-size:60px;
+      color:red;
+      position:absolute;
+      
+    }
+  </style>
+</head>
+
+  <body>
+       
+  </body>
+  <script>
+    
+    
+    for(var i=0;i<=12;i++)
+      {
+        var doot=document.createElement("div");
+        doot.className="dot";
+        doot.appendChild(document.createTextNode("."));
+        document.body.appendChild(doot);
+      }
+    
+    
+   var cx=[];
+   var cy=[];
+    
+  //  var dot = document.querySelector("p");
+    
+    window.addEventListener("mousemove", function fun(event)
+      {
+    var d = document.querySelectorAll(".dot");   
+      
+     if(cx.length<=d.length)
+      {
+        cx.unshift(event.clientX);
+        cy.unshift(event.clientY);
+      }
+    else
+      {
+         cx.pop();
+         cy.pop();
+         cx.unshift(event.clientX);
+         cy.unshift(event.clientY);
+      }
+ 
+         for(var i=0;i<d.length;i++)
+           {
+                  d[i].style.left=cx[i]+"px"
+                  d[i].style.top=cy[i]-60+"px"
+           }
+    
+     
+    
+    });
+     
+  </script>
+</html>

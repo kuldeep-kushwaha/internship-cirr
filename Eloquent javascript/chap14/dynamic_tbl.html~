@@ -1,0 +1,66 @@
+
+<html>
+
+    <head></head>
+  
+
+
+    <body id="yoo">
+       
+    </body>
+  
+  
+  
+    <script>
+  
+ //   document.write("jjjjj");
+     const MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+    {name: "Everest", height: 8848, place: "Nepal"},
+    {name: "Mount Fuji", height: 3776, place: "Japan"},
+    {name: "Vaalserberg", height: 323, place: "Netherlands"},
+    {name: "Denali", height: 6168, place: "United States"},
+    {name: "Popocatepetl", height: 5465, place: "Mexico"},
+    {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+  ];
+    
+  
+ //   document.write(MOUNTAINS["name"]);
+        
+var tbl=document.createElement("table");
+var row1=document.createElement("tr");
+var head=document.createElement("th");
+      
+tbl.style.border="1";
+var heading =Object.keys(MOUNTAINS[0]);
+      
+heading.map((a)=>{ 
+  var head=document.createElement("th");
+  head.textContent=a;
+  row1.appendChild(head);
+   tbl.appendChild(row1);
+});
+          
+      
+    for(y of  MOUNTAINS)
+    {
+    
+      row1=document.createElement("tr");
+      
+      heading.map((a)=>{ 
+      var col=document.createElement("td");
+      col.textContent=y[a];
+      row1.appendChild(col);
+      tbl.appendChild(row1);
+        
+    });
+
+      
+    }
+
+    yoo.appendChild(tbl);
+      
+        
+  </script>
+</html>
+ 

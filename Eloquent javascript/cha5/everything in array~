@@ -1,0 +1,34 @@
+var arr=[2,3,4]
+
+
+
+function every(array, test) {
+  // Your code here.
+  
+  var count=0;
+  
+  for(element of array)
+      {
+        
+        if(test(element))
+          {
+            count++;
+      //      console.log(count+"--len"+array.length)
+          }
+    
+      }
+  
+ 
+  if(count==array.length)
+    {
+      return true;
+    }
+  else
+    {
+      return false;
+    }
+}
+
+console.log(every(arr,n=>n<10));
+
+

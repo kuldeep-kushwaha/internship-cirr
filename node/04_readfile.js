@@ -1,0 +1,17 @@
+var fs = require('fs');
+
+//var buf=fs.readFile(process.argv[2]);
+//console.log(buf); process.argv[2]
+
+
+
+
+var buf= fs.readFile(process.argv[2], function (err, data) {
+  if (err) throw err;
+  console.log(data.toString().split("\n").length-1);
+});
+
+//var strt=buf.toString().split("\n");
+//console.log(strt);
+//console.log(strt.length-1);
+

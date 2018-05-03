@@ -1,0 +1,47 @@
+
+<html>
+
+<head>
+
+  <style>
+    
+    .dot{
+      font-size:100px;
+      color:red;
+      position:absolute;
+      
+    }
+  </style>
+</head>
+
+  <body>
+       
+  </body>
+  <script>
+    
+    var doot=[];
+    for(var i=0;i<=1000;i++)
+      {
+        var d=document.createElement("div");
+        d.className="dot";
+        d.appendChild(document.createTextNode("."));
+        document.body.appendChild(d);
+        doot.push(d);
+      }
+ 
+    let  currentDot=0;
+    
+    
+    window.addEventListener("mousemove", function fun(event)
+      {
+    let dot = doot[currentDot];
+    dot.style.left = (event.pageX - 3) + "px";
+    dot.style.top = (event.pageY - 3) + "px";
+    dot.style.color ="#"+((1<<24)*Math.random()|0).toString(16);
+    currentDot = (currentDot + 1) % doot.length;
+    
+    });
+     
+  </script>
+</html>
+

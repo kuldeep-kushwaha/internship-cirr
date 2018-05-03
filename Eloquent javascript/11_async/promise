@@ -1,0 +1,35 @@
+function won()
+{
+ return  new Promise(function(resolve,reject){
+  // console.log("inside won ");
+   resolve("won");
+});
+  
+}
+
+function throphy(mes)
+{
+  
+return new Promise(function(resolve,reject){
+ //  console.log("inside trophy ");
+  resolve(mes+" throphy");
+});
+
+}
+
+
+won().then(function(a){
+  //console.log(a);
+  return  throphy(a);
+  
+  }).catch(function(a){
+  //console.log(a);
+  return  throphy(a);
+  
+  }).then(function(b){
+  console.log(b);
+  });
+
+Promise.race([won(),throphy()]).then(function(){
+  console.log("Fffff");
+  });

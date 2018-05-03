@@ -1,0 +1,20 @@
+
+var kul=[
+  
+  {event:["yoo","hi"],sq:true},
+   {event:["hah","sad"],sq:false},
+   {event:["nahi","yipeei"],sq:true}
+  
+];
+
+
+console.log(kul[0].event[0]);
+
+for(var rf of kul)
+  {
+    
+    console.log(rf.event);
+     console.log("sq" in rf);
+    
+    
+  }

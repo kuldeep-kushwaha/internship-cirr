@@ -1,0 +1,7 @@
+In short, each local scope can also see all the local scopes that contain it. The set of bindings visible inside a block is determined by the place of that block in the program text. All bindings from blocks around it are visible—both those in blocks that enclose it and those at the top level of the program. This approach to binding visibility is called lexical scoping.
+
+
+
+To find out what properties an object has, you can use the Object.keys function. 
+
+There’s an Object.assign function that copies all properties from one object into another.

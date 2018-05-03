@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+  <style>
+    
+    #ball{
+      font-size:50px;
+    }
+  </style>
+</head>
+
+  <body>
+    
+    <p id="ball">🎈</p>
+  </body>
+  <script>
+    
+     window.addEventListener("keydown", function _func(event) {
+       var burst=document.createTextNode("💥");
+       var el = document.getElementById('ball');
+      var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+       if (event.key == "ArrowUp")
+       {
+        var size = parseFloat(style);     
+          if(size<=150)
+               el.style.fontSize = (size + (10/100)*150) + 'px';
+         else
+           {
+              el.replaceChild(burst,el.firstChild);
+              window.removeEventListener("keydown",_func);
+           }
+       }  
+    if (event.key == "ArrowDown")
+    {
+       var size = parseFloat(style);     
+        if(size>=50)
+           el.style.fontSize = (size -  (10/100)*150) + 'px';
+       }
+  });
+  </script>
+</html>

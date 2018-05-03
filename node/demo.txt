@@ -1,0 +1,3 @@
+We have seen two instances of writable streams in the HTTP examples—namely, the response object that the server could write to and the request object that was returned from request.
+
+Writable streams are a widely used concept in Node. Such objects have a write method, which can be passed a string or a Buffer object to write something to the stream. Their end method closes the stream, and also optionally takes a value to write to the stream before closing. Both of these methods can also be given a callback as an additional argument, which they will call when the writing or closing has finished.

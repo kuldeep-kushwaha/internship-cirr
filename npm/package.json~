@@ -1,0 +1,19 @@
+{
+  "name": "ab",
+  "version": "5.0.0",
+  "description": "sd",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "rrr",
+  "license": "ISC",
+  "repository": {
+    "type": "README.md",
+    "url": "./"
+  },
+  "keywords": [
+    "ewr"
+  ],
+  "dependencies": {}
+}
