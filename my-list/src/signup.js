@@ -13,33 +13,34 @@ import styles from './login_signup.css'
 
 import Navigation from './navigation.js';
 
+import { Link } from 'react-router-dom'
+
 class Signup extends React.Component {
 
 render() {
 
-    var singup_style={
-        display: 'inline-block',
-        width: '90%',
-        alignItems: 'center',
-        padding: 15,
-        'borderRadius': 15,
-        border: '1px solid #8c8888'
-    }
+  var singup_style={
+    display: 'inline-block',
+    width: '90%',
+    alignItems: 'center',
+    padding: 15,
+    'borderRadius': 15,
+    border: '1px solid #8c8888'
+    };
 
-       var member = {
-            color: 'red',
-            fontSize: 18,
-            marginTop: 14
-          };
+   var member = {
+        color: 'red',
+        fontSize: 18,
+        marginTop: 6
+      };
 
-          var logo = {
-            color: '#dedede',
-            fontSize: 60,
-            marginTop: 14,
-            fontWeight:'bold'
+      var logo = {
+        color: '#dedede',
+        fontSize: 50,
+        marginTop: 6,
+        fontWeight:'bold'
 
-          };
-
+      };
       return (
 
         <div id="main">
@@ -56,7 +57,11 @@ render() {
                             Already a member? 
                         </NavItem>
                         <NavItem eventKey={2}>
-                        <Button bsStyle="primary" style={{height:50,width: 100,fontSize: 20}}>Login</Button>
+                        <Link to={'/'}>
+                          <Button bsStyle="primary" style={{height:35,width: 100,fontSize: 18}}>
+                             Login
+                          </Button>
+                        </Link>
                         </NavItem>
                       </Nav>
               

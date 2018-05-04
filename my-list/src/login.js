@@ -9,6 +9,8 @@ import { FormGroup,FormControl} from 'react-bootstrap';
 
 import {Modal} from 'react-bootstrap';
 
+import { Link } from 'react-router-dom'
+
 class Login extends React.Component {
 
 render() {
@@ -17,7 +19,8 @@ render() {
         display: 'inline-block',
     width: '90%',
     alignItems: 'center',
-    padding: 15,
+    padding: 25,
+    paddingTop: 15,
     'borderRadius': 15,
     border: '1px solid #8c8888'
     };
@@ -25,13 +28,13 @@ render() {
        var member = {
             color: 'red',
             fontSize: 18,
-            marginTop: 14
+            marginTop: 6
           };
 
           var logo = {
             color: '#dedede',
-            fontSize: 60,
-            marginTop: 14,
+            fontSize: 50,
+            marginTop: 6,
             fontWeight:'bold'
 
           };
@@ -52,9 +55,14 @@ render() {
                             Join Us Now! 
                         </NavItem>
                         <NavItem eventKey={2}>
-                        <Button bsStyle="primary" style={{height:50,width: 100,fontSize: 20}}>Sign Up</Button>
+                        <Link to={'/Signup'}>
+                          <Button bsStyle="primary" style={{height:35,width: 100,fontSize: 18}}>
+                          Sign Up
+                          </Button>
+                        </Link>
                         </NavItem>
                       </Nav>
+
               
                 </Navbar>
 
@@ -70,27 +78,29 @@ render() {
 
            <div class="login" style={singup_style}>
 
-                     <div class="heading" style={{marginBottom:30}}>
-                        <h2 style={{}}>Login</h2>
-                         <p class="lead">Connect with a social network</p>   
-                    </div>
-
-                  <div class="social_btn">
-                      <input type="button" class="btn btn-danger" value="Google" />
-                  </div>
-
-                  <hr style={{backgroundColor:'rgba(204, 200, 200, 0.56)'}}/>
-
+                    
                       <div class="heading">
-                    <p class="lead">Login in with your email address</p> 
+                      <h2 style={{padding:15,paddingTop:15}}>Login</h2>
+                         <p class="lead">Connect with a social network</p> 
                       </div>  
 
+                        <div class="social_btn">
+                            <input style={{width:400,marginLeft:30}} type="button" class="btn btn-danger" value="Google" />
+                        </div>
 
-                       <form>
+                        <hr style={{backgroundColor:'rgba(204, 200, 200, 0.56)'}}/>
+
+                      <div class="heading" style={{marginBottom:30}}>
+                         <p class="lead">Login in with your email address</p>
+                      </div>
+
+                       <form style={{display:'flow-root'}}>
 
 
                      <div class="messagealert" id="alert_container">
                      </div>
+
+                  
 
                         <div class="form-group">
                           <label for="usr">Email</label>
@@ -104,9 +114,18 @@ render() {
                         </div>
      
                       <div class="active">
-                          <input type="submit" class="btn btn-info"  Text="Log In" style={{width:100,marginBottom:20}} />
+                          <input type="submit" value="Log In" class="btn btn-info"  Text="Log In" style={{width:100,marginBottom:0}}/>
+    
                       </div>
                     </form>
+
+                      
+                     
+
+                        
+
+                 
+
                 </div>
           </div>
       </div>
