@@ -12,6 +12,8 @@ import Signup from './signup.js';
 import Login from './login.js';
 import App from './app.js';
 
+import UserHome from './user_home.js';
+import UserProfile from './user_profile.js';
 
 ReactDOM.render(
 <App/>

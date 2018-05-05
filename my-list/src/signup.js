@@ -11,39 +11,38 @@ import {Modal} from 'react-bootstrap';
  
 import styles from './login_signup.css'
 
-import Navigation from './navigation.js';
-
 import { Link } from 'react-router-dom'
 
 class Signup extends React.Component {
 
 render() {
 
-  var singup_style={
-    display: 'inline-block',
-    width: '90%',
-    alignItems: 'center',
-    padding: 15,
-    'borderRadius': 15,
-    border: '1px solid #8c8888'
-    };
+    var singup_style={
+        display: 'inline-block',
+        width: '90%',
+        alignItems: 'center',
+        padding: 15,
+        'borderRadius': 15,
+        border: '1px solid #8c8888'
+    }
 
-   var member = {
-        color: 'red',
-        fontSize: 18,
-        marginTop: 6
-      };
+       var member = {
+            color: 'red',
+            fontSize: 18,
+            marginTop: 6
+          };
 
-      var logo = {
-        color: '#dedede',
-        fontSize: 50,
-        marginTop: 6,
-        fontWeight:'bold'
+          var logo = {
+            color: '#dedede',
+            fontSize: 50,
+            marginTop: 6,
+            fontWeight:'bold'
 
-      };
+          };
+
       return (
 
-        <div id="main">
+      <div id="main">
       <div id="nav">
 
             <div class="navigation">
@@ -57,9 +56,9 @@ render() {
                             Already a member? 
                         </NavItem>
                         <NavItem eventKey={2}>
-                        <Link to={'/'}>
-                          <Button bsStyle="primary" style={{height:35,width: 100,fontSize: 18}}>
-                             Login
+                        <Link to='/'>
+                          <Button bsStyle="primary" style={{height:35,width: 100,fontSize: 20,paddingTop: '3px'}}> 
+                              Login
                           </Button>
                         </Link>
                         </NavItem>
@@ -75,12 +74,12 @@ render() {
            
           </div>
 
-          <div id="signup_page">
+          <div id="signup_page"style={{marginBottom:'40px'}}>
 
            <div class="login" style={singup_style}>
 
                      <div class="heading" style={{marginBottom:30}}>
-                        <h2 style={{textAlign:'center'}}>Become a Member</h2>
+                        <h2 style={{textAlign:'center',color:'#2d2c2c'}}>Become a Member</h2>
                     </div>
 
                        <form runat="server" contenteditable="false">

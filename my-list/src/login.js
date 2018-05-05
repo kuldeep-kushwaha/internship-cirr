@@ -8,7 +8,7 @@ import { NavItem,NavDropdown,MenuItem } from 'react-bootstrap';
 import { FormGroup,FormControl} from 'react-bootstrap';
 
 import {Modal} from 'react-bootstrap';
-
+import styles from './login_signup.css'
 import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
@@ -21,7 +21,7 @@ render() {
     alignItems: 'center',
     padding: 25,
     paddingTop: 15,
-    'borderRadius': 15,
+    borderRadius: 15,
     border: '1px solid #8c8888'
     };
 
@@ -55,11 +55,11 @@ render() {
                             Join Us Now! 
                         </NavItem>
                         <NavItem eventKey={2}>
-                        <Link to={'/Signup'}>
-                          <Button bsStyle="primary" style={{height:35,width: 100,fontSize: 18}}>
+                         <Link to={'/Signup'}>
+                          <Button bsStyle="primary" style={{height:35,width: 100,fontSize:18}}>
                           Sign Up
                           </Button>
-                        </Link>
+                        </Link> 
                         </NavItem>
                       </Nav>
 
@@ -80,12 +80,14 @@ render() {
 
                     
                       <div class="heading">
-                      <h2 style={{padding:15,paddingTop:15}}>Login</h2>
+                      <h2 style={{padding:15,paddingTop:15,color:'#2d2c2c'}}>Login</h2>
                          <p class="lead">Connect with a social network</p> 
                       </div>  
 
-                        <div class="social_btn">
-                            <input style={{width:400,marginLeft:30}} type="button" class="btn btn-danger" value="Google" />
+                        <div class="social_btn" style={{width:'100%'}}>
+                        <Link to={'/UserHome'} style={{width:'100%'}}>
+                            <input style={{width:'85%',marginLeft:30,float:'left'}} type="button" class="btn btn-danger" value="Google" />
+                        </Link>
                         </div>
 
                         <hr style={{backgroundColor:'rgba(204, 200, 200, 0.56)'}}/>
@@ -118,13 +120,6 @@ render() {
     
                       </div>
                     </form>
-
-                      
-                     
-
-                        
-
-                 
 
                 </div>
           </div>

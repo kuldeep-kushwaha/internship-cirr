@@ -113,7 +113,7 @@ h2 {
 }
 
 .social_btn .btn-primary {
-    background-image: url(image/social.png);
+    background-image: url('image/social.png');
     background-position-x: -5px;
     background-position-y: 0px;
     background-repeat: no-repeat;

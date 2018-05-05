@@ -442,11 +442,26 @@
     "pickerWorkingDir": "/home/trainee12/Desktop/internship-cirr",
     "openedPathsList": {
         "workspaces": [
+            "/home/trainee12/Desktop/internship-cirr/my-list",
             "/home/trainee12/Desktop/internship-cirr/my-list"
         ],
         "files": [
             "/home/trainee12/Desktop/internship-cirr/my-list/src/signup.js",
             "/home/trainee12/Desktop/internship-cirr/my-list/src/login.js"
         ]
+    },
+    "windowsState": {
+        "openedWindows": [],
+        "lastActiveWindow": {
+            "folderPath": "/home/trainee12/Desktop/internship-cirr/my-list",
+            "backupPath": "/home/trainee12/Desktop/internship-cirr/my-list/~/.vscode-root/Backups/a57db02bb0fd9848521764d74bc0dd55",
+            "uiState": {
+                "mode": 1,
+                "x": 356,
+                "y": 185,
+                "width": 1024,
+                "height": 768
+            }
+        }
     }
 }
