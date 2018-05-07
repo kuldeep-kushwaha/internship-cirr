@@ -124,17 +124,17 @@ class UserProfile extends React.Component {
                                             <div class="user_img">
                                                 <img src="./image/user.png" class="user_avtar" id="userpic" />
                                             </div>
-                                            <div class="choose_img">
+                                            {/* <div class="choose_img">
                                                 <input type="file" class="filestyle" ID="file_field" name="file_field" />
                                                 <p>JPG, GIF or PNG, Max size: 2MB</p>
-                                            </div>
+                                            </div> */}
                                         </div>
 
                                         <form>
                                             <div class="form-group">
-                                                <label for="username">Username</label>
+                                                <label for="username">Name</label>
                                                 <input type="text" class="form-control" id="usernamedisp" required />
-                                                <p>Username can be used for login as well.. </p>
+                                                <p></p>
                                             </div>
 
                                             <div class="form-group">
@@ -192,7 +192,7 @@ class UserProfile extends React.Component {
                 </div>
 
 
-                <div id="main_footer" style={{ position: 'relative' }}>
+                <div id="" style={{ position: 'relative' }}>
                 </div>
             </div>
 

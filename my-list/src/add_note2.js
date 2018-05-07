@@ -31,63 +31,67 @@ class AddNote extends React.Component {
         padding: '3px',
         borderRadius: '50px'
       },
-
-      list: [
-        {
-          list_name: '',
-          checked: false,
-        }
-
-      ]
-
+      children: [
+        <div id="heading_body" style={{ padding: '10px 10px 0px 10px', width: '100%', display: 'inline-block' }}>
+          <input style={{ width: '60%', float: 'left' }} type="text" class="form-control" id="title" required />
+          <Button class="1"  onClick={(e)=>this.remove_list()} style={{
+            backgroundColor: 'rgb(255, 255, 255)', marginLeft: '20px', width: '30px', height: '30px',
+            marginBottom: '10px', padding: '3px', borderRadius: '50px'
+          }}>
+            <Glyphicon id={this.count} glyph="remove" />
+          </Button>
+        </div>
+      ],
+      count:0
     };
 
 
   }
 
   add_list() {
+
     this.setState({
-      list:this.state.list.concat([{
-        list_name: '',
-        checked: false,
-      }])
+      children: this.state.children.concat([
+        <div id="heading_body" style={{ padding: '10px 10px 0px 10px', width: '100%', display: 'inline-block' }}>
+          <input style={{ width: '60%', float: 'left' }} type="text" class="form-control" id="title" required />
+          <Button onClick={(e)=>this.remove_list(e)} style={this.state.pop_list_del_btn}>
+            <Glyphicon id={this.state.count} glyph="remove" />
+          </Button>
+        </div>
+      ])
     });
+
+    this.setState({count:this.state.count+1});
+    alert("add_list " + this.state.children.length);
   }
 
   remove_list(e) {
 
-    //  alert(e.target.id)
-    console.log('state list',this.state.list);
-      var array = this.state.list; // make a separate copy of the array
-      console.log('before',array);
-      var index = e.target.id
-     alert(e.target.id)
+    alert(e.target.id);
+    // var array = this.state.children; // make a separate copy of the array
+    // var index = this.state.children.length
+    // array.splice(this.state.children.length-1, 1);
+    // this.setState({children:array});
 
-     array.splice(index, 1);
-     console.log('after',array);
-     this.setState({list:array});
-
+    alert("remove_list " + this.state.children.length);
   };
-
-  update_list(evt,index)
-  {
-   // alert(evt.keyValue+"  "+index)
-    evt = evt || window.event;
-    var charCode = evt.keyCode || evt.which;
-    alert(evt.keyCode);
-    var charStr = String.fromCharCode(charCode);
-    alert(charStr);
-  }
 
   handleHide() {
 
 
     this.setState({
       show: false,
-       list:[{
-        list_name: '',
-        checked: false
-       }]
+      children: [
+        <div id="heading_body" style={{ padding: '10px 10px 0px 10px', width: '100%', display: 'inline-block' }}>
+          <input style={{ width: '60%', float: 'left' }} type="text" class="form-control" id="title" required />
+          <Button onClick={(e)=>this.remove_list(e)} style={{
+            backgroundColor: 'rgb(255, 255, 255)', marginLeft: '20px', width: '30px', height: '30px',
+            marginBottom: '10px', padding: '3px', borderRadius: '50px'
+          }}>
+            <Glyphicon id={this.state.count} glyph="remove" />
+          </Button>
+        </div>
+      ]
 
     });
 
@@ -134,27 +138,12 @@ class AddNote extends React.Component {
                       </Button>
                     </div>
 
+                    {this.state.children}
+
+                    {}
 
 
 
-                    {
-                      this.state.list.map((curr,index) => {
-                       
-                        return (
-                          <div id="heading_body"  key={index} style={{ padding: '10px 10px 0px 10px', width: '100%', display: 'inline-block' }}>
-                            <input  key={index} onChange={(e)=>this.update_list(e,index)} value={curr.list_name} style={{ width: '60%', float: 'left' }} type="text" class="form-control" id="title" 
-                            required />
-                            <Button  onClick={(e) => this.remove_list(e)} style={{
-                              backgroundColor: 'rgb(255, 255, 255)', marginLeft: '20px', width: '30px', height: '30px',
-                              marginBottom: '10px', padding: '3px', borderRadius: '50px'
-                            }}>
-                              <Glyphicon id={index} glyph="remove" />
-                            </Button>
-                          </div>
-
-                        )
-                      })
-                    }
 
                   </div>
 
@@ -165,6 +154,7 @@ class AddNote extends React.Component {
 
               </form>
             </div>
+            
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleHide}>Close</Button>

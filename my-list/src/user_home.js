@@ -65,6 +65,7 @@ class UserHome extends React.Component {
     }
 
 
+
     return (
 
       <div id="main" style={{ backgroundColor: 'white' }}>
@@ -86,18 +87,18 @@ class UserHome extends React.Component {
                 <NavItem eventKey={2}>
                   <NavDropdown eventKey={3} title="kuldeep kushwaha" id="basic-nav-dropdown" style={{ color: 'white' }}>
                     <MenuItem eventKey={3.1}>
-                      <Link to={'/UserHome'} style={{color:'#232222'}}><Glyphicon glyph="list-alt" /> My list</Link>
+                      <Link to={'/UserHome'} style={{ color: '#232222' }}><Glyphicon glyph="list-alt" /> My list</Link>
                     </MenuItem>
 
 
                     <MenuItem eventKey={3.2}>
-                      <Link to={'/UserProfile'} style={{color:'#232222'}}><Glyphicon glyph="user" /> Profile </Link>
+                      <Link to={'/UserProfile'} style={{ color: '#232222' }}><Glyphicon glyph="user" /> Profile </Link>
                     </MenuItem>
 
                     <MenuItem divider />
                     <MenuItem eventKey={3.3}>
-                    <Link to={'/'} style={{color:'#232222'}}><Glyphicon glyph="log-out" /> Logout</Link>
-                     </MenuItem>
+                      <Link to={'/'} style={{ color: '#232222' }}><Glyphicon glyph="log-out" /> Logout</Link>
+                    </MenuItem>
                   </NavDropdown>
                 </NavItem>
 
@@ -167,11 +168,6 @@ class UserHome extends React.Component {
                     </Panel.Body>
                   </Panel>
 
-                  <Panel bsStyle={this.value[Math.floor((Math.random() * this.value.length) + 0)]} style={panel} onClick={(e) => alert(this.value)}>
-                    <Panel.Heading>Panel 1</Panel.Heading>
-                    <Panel.Body>Panel content</Panel.Body>
-                  </Panel>
-
 
 
 
@@ -194,7 +190,7 @@ class UserHome extends React.Component {
         </div>
 
 
-        <div id="main_footer">
+        <div id="">
         </div>
       </div>
 
