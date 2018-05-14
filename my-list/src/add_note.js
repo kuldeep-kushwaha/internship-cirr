@@ -18,65 +18,60 @@ class AddNote extends React.Component {
     super(props, context);
 
     this.handleHide = this.handleHide.bind(this);
+    this.add_list = this.add_list.bind(this);
+    this.remove_list = this.remove_list.bind(this);
 
     this.state = {
       show: false,
-
-      pop_list_del_btn: {
-        backgroundColor: 'rgb(255, 255, 255)',
-        marginLeft: '20px',
-        width: '30px',
-        height: '30px',
-        marginBottom: '10px',
-        padding: '3px',
-        borderRadius: '50px'
-      },
-
       list: [
         {
           list_name: '',
-          checked: false,
-        }
-
-      ]
-
+          checked:false,
+        }]
     };
-
-
   }
 
   add_list() {
     this.setState({
       list:this.state.list.concat([{
         list_name: '',
-        checked: false,
+        checked:false,
       }])
     });
   }
 
-  remove_list(e) {
+  remove_list(e,index) {
 
-    //  alert(e.target.id)
-    console.log('state list',this.state.list);
-      var array = this.state.list; // make a separate copy of the array
-      console.log('before',array);
-      var index = e.target.id
-     alert(e.target.id)
-
+    var array = this.state.list; 
      array.splice(index, 1);
-     console.log('after',array);
      this.setState({list:array});
-
   };
 
   update_list(evt,index)
   {
-   // alert(evt.keyValue+"  "+index)
-    evt = evt || window.event;
-    var charCode = evt.keyCode || evt.which;
-    alert(evt.keyCode);
-    var charStr = String.fromCharCode(charCode);
-    alert(charStr);
+    this.setState({
+      list:this.state.list.filter((curr)=>{
+          return curr.list_name=evt.target.valuel
+      })
+     
+    });
+    this.state.list.map((curr)=>{
+      alert(curr.list_name)
+  })
+
+  }
+
+  update_list_checkbox(evt,index)
+  {
+    alert(evt.target.value);
+    alert(evt.target.checked);
+
+    this.setState({
+      list:this.state.list.map((curr,i)=>{
+        if(index == i){curr.checked=true}
+      })
+    });
+
   }
 
   handleHide() {
@@ -95,6 +90,17 @@ class AddNote extends React.Component {
   }
 
   render() {
+
+    var pop_list_del_btn={
+      backgroundColor: 'rgb(255, 255, 255)',
+      marginLeft: '20px',
+      width: '30px',
+      height: '30px',
+      marginBottom: '10px',
+      padding: '3px',
+      borderRadius: '50px'
+    }
+
     return (
       <div className="modal-container" style={{ height: 0 }}>
         <Button style={{ padding: 0, backgroundColor: '#232222', borderColor: '#232222', color: 'white' }}
@@ -112,7 +118,7 @@ class AddNote extends React.Component {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title" style={{ fontFamily: 'cursive', fontWeight: 'bold' }}>
-              <h1>Add Note</h1>
+              <h4>Add Note</h4>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -124,6 +130,8 @@ class AddNote extends React.Component {
                       Add Title
                     </div>
                     <div id="heading_body" style={{ padding: '10px' }}>
+                 
+
                       <input type="text" class="form-control" id="title" required />
                     </div>
                   </div>
@@ -138,20 +146,21 @@ class AddNote extends React.Component {
 
 
                     {
-                      this.state.list.map((curr,index) => {
-                       
+                      this.state.list.map((c,index) => {
+                     //  console.log(c.list_name)
                         return (
                           <div id="heading_body"  key={index} style={{ padding: '10px 10px 0px 10px', width: '100%', display: 'inline-block' }}>
-                            <input  key={index} onChange={(e)=>this.update_list(e,index)} value={curr.list_name} style={{ width: '60%', float: 'left' }} type="text" class="form-control" id="title" 
+                           
+                          
+                            <input  key={index} value={c.list_name} onChange={(e)=>this.update_list(e,index)} style={{ width: '60%', float: 'left' }} type="text" class="form-control" id="title" 
                             required />
-                            <Button  onClick={(e) => this.remove_list(e)} style={{
+                            <Button onClick={(e) => this.remove_list(e,index)} style={{
                               backgroundColor: 'rgb(255, 255, 255)', marginLeft: '20px', width: '30px', height: '30px',
                               marginBottom: '10px', padding: '3px', borderRadius: '50px'
                             }}>
-                              <Glyphicon id={index} glyph="remove" />
+                              <Glyphicon glyph="remove" />
                             </Button>
                           </div>
-
                         )
                       })
                     }

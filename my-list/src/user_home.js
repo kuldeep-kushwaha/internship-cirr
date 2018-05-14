@@ -79,7 +79,7 @@ class UserHome extends React.Component {
               </Navbar.Brand>
               <Nav pullRight>
                 <NavItem eventKey={1} style={{}}>
-                  <AddNote />
+                  <AddNote isEdit={false}/>
 
                 </NavItem>
 
