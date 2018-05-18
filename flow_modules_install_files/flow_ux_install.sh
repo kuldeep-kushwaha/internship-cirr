@@ -1,0 +1,52 @@
+
+#!/bin/bash
+
+npm install node server.js
+npm install webpack-dev-server
+npm install axios
+npm install babel-polyfill
+npm install babel-preset-stage-2
+npm install bluebird
+npm install brace
+npm install braintree-web
+npm install chart.js
+npm install classnames
+npm install css-loader
+npm install flatpickr
+npm install flux
+npm install history
+npm install immutability-helper
+npm install jest-html-reporter
+npm install jquery
+npm install json-loader
+npm install jsplumb
+npm install keymirror
+npm install lodash
+npm install materialize-css
+npm install mixpanel-browser
+npm install moment
+npm install mousetrap
+npm install node
+npm install object-assign
+npm install path-parser
+npm install prop-types
+npm install pubnub
+npm install react-circular-progressbar
+npm install react-contenteditable
+npm install react-datepicker
+npm install react-dnd
+npm install react-dnd-html5-backend
+npm install react-dom
+npm install react-google-login
+npm install react-input-autosize
+npm install react-isolated-scroll
+npm install react-json-view
+npm install react-lightweight-tooltip
+npm install react-masonry-component
+npm install react-quill
+npm install react-recaptcha
+npm install react-router
+npm install react-select
+npm install react-tagged-input
+npm install server.js
+npm install validator.js

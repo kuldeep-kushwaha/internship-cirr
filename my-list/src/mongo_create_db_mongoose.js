@@ -1,4 +1,5 @@
 var mongoose= require('mongoose');
+
 var mongoDB = 'mongodb://127.0.0.1/my_database5';
 mongoose.connect(mongoDB);
 // Get Mongoose to use the global promise library
@@ -26,16 +27,15 @@ var breakfastSchema = new Schema({
 var SomeModel = mongoose.model('SomeModel23', SomeModelSchema );
 
 var newmode = mongoose.model('breakfast',breakfastSchema);
-// Create an instance of model SomeModel
+
 SomeModel.create({ name: 'also_awesome',surname:'kushwaha' }, function (err, awesome_instance) {
-    if (err) return handleError(err);
+    if (err) {console.log(err);}
     // saved!
   });
 
   newmode.create({eggs:{type12:'30'},drink:{type23:'beeree'}}, function (err, awesome_instance) {
-    if (err)
-    console.log(err)
+    if (err) {console.log(err)}
     // saved!
   });
 
-  db.close();
+  //db.close();
