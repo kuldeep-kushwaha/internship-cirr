@@ -19,6 +19,15 @@ https://api.github.com/repos/kuldeep-kushwaha/internship-cirr/commits        (wo
 
 https://api.github.com/repos/' + input.auth.username + '/' + input.repo + '/commits'
 
+
+https://api.github.com/repos/kuldeep-kushwaha/internship-cirr/pull 
+/repos/:owner/:repo/pulls
+
+https://api.github.com/repos/kuldeep-kushwaha/internship-cirr/branches/abc
+GET /repos/:owner/:repo/branches/:branch
+
+https://api.github.com/repos/kuldeep-kushwaha/internship-cirr/branches
+GET /repos/:owner/:repo/branches
 changes 1
 
 
