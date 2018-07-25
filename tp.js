@@ -22,3 +22,6 @@ https://api.github.com/repos/' + input.auth.username + '/' + input.repo + '/comm
 changes 1
 
 
+username: kuldeep132
+repo :garfiled
+
